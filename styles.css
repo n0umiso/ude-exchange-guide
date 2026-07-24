@@ -6,7 +6,8 @@
   --bg: #ffffff;
   --border: #e5e5e5;
   --block-bg: #f7f7f5;
-  --link: #2a5db0;
+  --accent: #003B7A;      /* UDE navy */
+  --link: #003B7A;
   --code-bg: #efefec;
 }
 
@@ -32,7 +33,7 @@ h1 {
   font-weight: 700;
   margin-bottom: 32px;
   padding-bottom: 12px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 2px solid var(--accent);
 }
 
 h2 {
@@ -40,12 +41,15 @@ h2 {
   font-weight: 700;
   margin-top: 40px;
   margin-bottom: 16px;
+  padding-left: 12px;
+  border-left: 4px solid var(--accent);
 }
 
 h3 {
   font-size: 17px;
   font-weight: 600;
   margin: 0 0 12px;
+  color: var(--accent);
 }
 h3 small {
   font-size: 11.5px;
@@ -78,9 +82,9 @@ code {
 /* 目次 */
 nav.toc {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px 14px;
-  padding: 12px 16px;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 18px;
   background: var(--block-bg);
   border: 1px solid var(--border);
   margin-bottom: 32px;
@@ -100,7 +104,7 @@ h2[id] { scroll-margin-top: 24px; }
 /* Overview（冒頭の流れ） */
 .overview {
   background: var(--block-bg);
-  border-left: 3px solid var(--border);
+  border-left: 3px solid var(--accent);
   padding: 16px 20px;
   margin-bottom: 32px;
   font-size: 14.5px;
