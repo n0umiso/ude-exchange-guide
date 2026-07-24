@@ -1,0 +1,182 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --text: #202020;
+  --text-soft: #666;
+  --bg: #ffffff;
+  --border: #e5e5e5;
+  --block-bg: #f7f7f5;
+  --link: #2a5db0;
+  --code-bg: #efefec;
+}
+
+html { font-size: 15.5px; }
+body {
+  font-family: -apple-system, "Helvetica Neue", "Hiragino Kaku Gothic ProN",
+               "Hiragino Sans", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "palt" 1;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 24px 96px;
+}
+
+h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 32px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+
+h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+h3 small {
+  font-size: 11.5px;
+  color: var(--text-soft);
+  font-weight: 400;
+  margin-left: 8px;
+  letter-spacing: 0.02em;
+}
+
+p { margin-bottom: 12px; }
+ol, ul { padding-left: 22px; margin-bottom: 12px; }
+li { margin-bottom: 4px; }
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+a:hover { text-decoration-thickness: 2px; }
+
+code {
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+  font-size: 13px;
+  background: var(--code-bg);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+/* 目次 */
+nav.toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  padding: 12px 16px;
+  background: var(--block-bg);
+  border: 1px solid var(--border);
+  margin-bottom: 32px;
+  font-size: 13.5px;
+}
+nav.toc a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--border);
+  padding-bottom: 1px;
+}
+nav.toc a:hover { color: var(--link); border-color: var(--link); }
+
+/* アンカージャンプ時、h2 が上部に貼り付かないよう余白 */
+h2[id] { scroll-margin-top: 24px; }
+
+/* Overview（冒頭の流れ） */
+.overview {
+  background: var(--block-bg);
+  border-left: 3px solid var(--border);
+  padding: 16px 20px;
+  margin-bottom: 32px;
+  font-size: 14.5px;
+}
+.overview ol { margin: 8px 0; padding-left: 22px; }
+.overview li { margin-bottom: 4px; }
+.overview .note { color: var(--text-soft); font-size: 13.5px; margin-top: 8px; }
+
+/* Block（1手続き＝1ブロック） */
+.block {
+  background: var(--block-bg);
+  border: 1px solid var(--border);
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+.block > *:last-child { margin-bottom: 0; }
+.block.empty {
+  background: transparent;
+  border: 1px dashed var(--border);
+  color: var(--text-soft);
+}
+.block.empty h3 { color: var(--text); }
+
+/* 個人的な体感 */
+.memo {
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: #fff;
+  border: 1px dashed var(--border);
+  font-size: 13.5px;
+  color: var(--text-soft);
+}
+.memo::before {
+  content: "個人的な体感（N=1）";
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: #a06060;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+/* 費用テーブル */
+table.simple {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  margin: 8px 0 12px;
+}
+table.simple th, table.simple td {
+  text-align: left;
+  padding: 6px 8px 6px 0;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+table.simple th {
+  color: var(--text-soft);
+  font-weight: 500;
+  font-size: 12.5px;
+}
+table.simple td.num {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  width: 90px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 40px 0;
+}
+
+footer {
+  color: var(--text-soft);
+  font-size: 12.5px;
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
